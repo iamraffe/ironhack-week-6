@@ -1,11 +1,13 @@
 require "sinatra"
 
 get "/" do
-	"My first Sinatra app."
+	erb :index
 end
 
-get '/hi' do
-  "Hello World!"
+get "/hi" do
+  @greeting = "Hello World"
+  @ingredients = ['rice', 'sausage']
+  erb(:hipage)
 end
 
 get '/about' do
@@ -13,5 +15,18 @@ get '/about' do
 end
 
 get "/author" do
-	erb(:author)
+  @date = Date.today
+	erb :author
+end
+
+get "/users/:username" do
+  @username = params[:username]
+
+  erb(:user_profile)
+end
+
+get "/hours/ago/:hours" do
+  @hours = params[:hours]
+
+  erb(:hour_ago)
 end

@@ -1,5 +1,17 @@
 <h1>My First Sinatra</h1>
+<h2>
+  <b>Author:</b>
+  Izzy Ironside
+</h2>
 <p>
-	<b>Author:</b>
-	Johnny Appleseed
+  Izzy Ironside was born on
+  <%= @date.jd %>.
 </p>
+<% if Date.today.monday? %>
+  <p>
+    Izzy Ironside is <strong>NOT</strong>
+    a fan of Mondays like today.
+  </p>
+<% end %>
+<img src="/cool_image.png"
+     alt="A very cool image" style="max-width: 350px">
