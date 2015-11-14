@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Todos</title>
+  </head>
+  <body>
+    <ul class="navbar">
+      <li><a href="new_todo">Add a new To Do item</a></li>
+    </ul>
+    <% @todos.list_of_todos.each do | todo | %>
+      <p>
+        <%= todo.content %>
+        -
+        <%= todo.time %>
+      </p>
+    <% end %>
+    <p>You have <%= @hours_needed %> hours of todos left.</p>
+  </body>
+</html>
