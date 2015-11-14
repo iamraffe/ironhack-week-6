@@ -4,12 +4,8 @@ get '/' do
   erb :index
 end
 
-get '/solve/:operation' do
-  "#{Calculator.new.solve(params[:operation], params[:x].to_f, params[:y].to_f)}"
-end
-
-post '/solve/:operation' do
-  "#{Calculator.new.solve(params[:operation], params[:x].to_f, params[:y].to_f)}"
+post '/solve' do
+  "#{Calculator.new.solve(params[:operation], params[:first].to_f, params[:second].to_f)}"
 end
 
 # get '/addition' do

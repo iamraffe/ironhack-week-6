@@ -22,6 +22,8 @@ class Calculator
         multiplication(x.to_f,y.to_f)
       when 'division'
         division(x.to_f,y.to_f)
+      else
+        "Operation not recognized"
     end
   end
 end

@@ -1,28 +1,40 @@
-$('.fa').on('click', function(e){
+$('button[name=operation]').on('click', function(e){
     e.preventDefault();
-    var number, operation;
-    number = $('input[name=number]').val();
-    if ($(this).parent().val() !== 'equal'){
-      operation = $(this).parent().val();
-      $('input[name=number]').val('');
-      $('.fa-home').parent().attr('data-first', number);
-      $('.fa-home').parent().attr('data-operation', operation);
-      console.log(number);
-      console.log(operation);
+
+    var number = $('input[name=number]').val();
+    var operation = $(this).val();
+    $('button[name=result]').attr('data-operation', operation);
+    $('input[name=number]').val('');
+
+    if($('button[name=result]').attr('data-first') === 'c'){
+      $('button[name=result]').attr('data-first', number);
     }
     else{
-      $('.fa-home').parent().attr('data-second', number);
-        $.ajax({
-          url: '/solve' + "/" + $('.fa-home').parent().attr('data-operation'),
-          method: 'POST',
-          data: {operation: $('.fa-home').parent().attr('data-operation'), x: $('.fa-home').parent().attr('data-first'), y: $('.fa-home').parent().attr('data-second')},
-          success: function(response){
-            $('input[name=number]').val(response);
-          },
-          error: function(response){
-            alert('error');
-            console.log(response);
-          }
-        });
+      // $('button[name=result]').attr('data-second', number);
+      getResult(operation,  $('button[name=result]').attr('data-first'),number);
     }
 });
+
+$('button[name=result]').on('click', function(e){
+  e.preventDefault();
+  var operation = $(this).attr('data-operation');
+  var first = $(this).attr('data-first');
+  var second = $('input[name=number]').val();
+  getResult(operation, first, second);
+});
+
+function getResult(operation, first, second){
+  $.ajax({
+    url: '/solve',
+    method: 'POST',
+    data: {operation: operation, first: first, second: second},
+    success: function(response){
+      $('input[name=number]').val(response);
+      $('button[name=result]').attr('data-first', response);
+    },
+    error: function(response){
+      alert('error');
+      console.log(response);
+    }
+  });
+}
