@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>ONLINE CALCULATOR!</title>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-MfvZlkHCEqatNoGiOXveE8FIwMzZg4W85qfrfIFBfYc= sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/custom.css">
+</head>
+<body>
+<div class="container">
+  <div class="jumbotron">
+    <div class="row">
+      <div class="col-md-6">
+        <h1>Welcome to the best online calculator like ever man!</h1>
+      </div>
+      <div class="col-md-6">
+        <img src="https://www.colourbox.com/preview/11562916-calculator-flat-concept-icon-vector-illustration.jpg" alt="Online Calculator" class="img-responsive">
+      </div>
+    </div>
+  </div>
+  <div class="row">
+      <div class="col-md-3 col-md-offset-6">
+        <input type="number" name="number" placeholder="Enter a number...">
+      </div>
+      <div class="col-md-3">
+        <button type="submit" name="operation" class="btn-primary btn btn-lg" value="addition">+</button>
+        <button type="submit" name="operation" class="btn-primary btn btn-lg" value="substraction">-</button>
+        <button type="submit" name="operation" class="btn-primary btn btn-lg" value="multiplication">*</button>
+        <button type="submit" name="operation" class="btn-primary btn btn-lg" value="division">/</button>
+        <button type="submit" name="operation" class="btn-primary btn btn-lg" value="equal" data-first="" data-second="" data-operation="">=</button>
+      </div>
+      <pre id="response" class="hide"></pre>
+  </div>
+</div>
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="/js/custom.js"></script>
+</body>
+</html>
