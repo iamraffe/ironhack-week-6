@@ -1,7 +1,9 @@
 button{
   display: block !important;
-  width: 50px;
+  min-width: 50px;
   margin: 15px;
+  font-size: 2em;
+  font-weight: bold;
 }
 
 input{

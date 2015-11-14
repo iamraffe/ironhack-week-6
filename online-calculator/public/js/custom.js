@@ -38,3 +38,14 @@ function getResult(operation, first, second){
     }
   });
 }
+
+$('button[name=number]').on('click', function(e){
+  e.preventDefault();
+  $('input[name=number]').val($(this).val());
+});
+
+$('button[name=clear]').on('click', function(e){
+  e.preventDefault();
+  $('input[name=number]').val('');
+  $('button[name=result]').attr('data-first', 'c');
+});
