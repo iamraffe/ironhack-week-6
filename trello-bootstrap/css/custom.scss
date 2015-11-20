@@ -1,0 +1,68 @@
+body{
+  background-image: url(https://trello-backgrounds.s3.amazonaws.com/53baf533e697a982248cd73f/4200x4200/48dbf0b5a546541e847e267a5dcd2201/shutterstock_134707556.jpg);
+  background-size: cover; 
+  overflow: hidden;
+}
+.header{
+  height: 40px;
+  background: rgba(0,0,0,.15);
+  padding: 5px;
+
+  nav{
+    display: block;
+    line-height: 18px;
+
+    .nav-item{
+      background: 0 0;
+      border-radius: 3px;
+      color: white;
+      display: inline-block;
+      font-weight: 700;
+      height: 15px;
+      line-height: 15px;
+      margin: 0 5px 5px 0;
+      padding: 8px;
+      text-transform: uppercase;
+    }
+  }
+
+  .logo-wrapper{
+    bottom: 0;
+    height: 30px;
+    display: block;
+    left: 50%;
+    margin-left: -40px;
+    opacity: 0.5;
+    text-align: center;
+    width: 5pc;
+    z-index: 2;
+    position: absolute; 
+    top: 0px;
+
+    .logo{
+      background-image: url(https://d78fikflryjgj.cloudfront.net/images/50b4ebc64391dc394a38e73aed57f0e2/header-logo.png);
+      height: 30px;
+      top: 0;
+      right: 0;
+      background-size: 5pc 30px;
+      position: absolute; 
+      width: 5pc;
+    }
+  }
+}
+
+.content{
+  margin-top: 25px;
+
+  .panel{
+    // margin: 0 5px;
+    max-height: 100%;
+
+    &:first-child{
+      // margin-left: 10px;
+    }
+    .panel-heading{
+
+    }
+  }
+}
